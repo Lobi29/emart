@@ -1,14 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { HeroBanner, Footer } from "@/components";
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+const Home = () => {
   return (
-    <div>
-      heloow
-    </div>
+    <>
+      <HeroBanner />
+
+      <div className="products-heading">
+        <h2>Best selling Products</h2>
+        <p>Speakers of many variations</p>
+      </div>
+
+      <div className="products-container">
+        {['product 1', 'Product 2'].map(
+          (product) => product
+        )}
+      </div>
+
+      <Footer />
+    </>
   )
 }
+
+export default Home;
