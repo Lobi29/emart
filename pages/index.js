@@ -1,9 +1,10 @@
 import { HeroBanner, Footer } from "@/components";
+import { client } from "@/lib/client";
 
-const Home = () => {
+const Home = ({ products, bannerData }) => {
   return (
     <>
-      <HeroBanner />
+      <HeroBanner heroBanner={ bannerData.length && bannerData[0] } />
 
       <div className="products-heading">
         <h2>Best selling Products</h2>
@@ -11,7 +12,7 @@ const Home = () => {
       </div>
 
       <div className="products-container">
-        {['product 1', 'Product 2'].map(
+        {products.map(
           (product) => product
         )}
       </div>
@@ -19,6 +20,22 @@ const Home = () => {
       <Footer />
     </>
   )
+}
+
+
+export async function getServerSideProps() {
+
+  const products = await client.fetch('*[_type == "product"]');
+
+  const bannerData = await client.fetch('*[_type == "banner"]');
+
+
+  return {
+    props: {
+      products,
+      bannerData
+    }
+  }
 }
 
 export default Home;
