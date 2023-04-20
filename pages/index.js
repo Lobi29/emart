@@ -1,4 +1,4 @@
-import { HeroBanner, Footer, Product } from "@/components";
+import { HeroBanner, Footer, Product, FooterBanner } from "@/components";
 import { client } from "@/lib/client";
 
 const Home = ({ products, bannerData }) => {
@@ -17,7 +17,7 @@ const Home = ({ products, bannerData }) => {
         }
       </div>
 
-      <Footer footerBanner={ bannerData && bannerData[0]} />
+      <FooterBanner footerBanner={ bannerData && bannerData[0]} />
     </>
   )
 }
