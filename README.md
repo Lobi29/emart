@@ -1,4 +1,13 @@
-      <div className='products-container'>
-        {/* {["product1", "Product2"].map((product) => product)} */}
-        {products?.map((product) => <Product key={product._id} product={product} />)}
-      </div>
+# Modern full stack ecommerce website
+
+
+<ul>![banner](https://user-images.githubusercontent.com/108052802/233287568-14526d16-50a6-4cc2-954e-806fe182d4fc.png)
+
+<br />
+<br />
+<h3>Tech Stack Used</h3>
+  <li>Next.js</li>
+  <li>Sanity</li>
+  <li>JavaScript</li>
+  <li>CSS</li>
+</ul>
